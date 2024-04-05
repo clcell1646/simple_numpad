@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class SimpleNumpad extends StatelessWidget {
   const SimpleNumpad({
     super.key,
-    required this.numpadWidth,
-    required this.numpadHeight,
+    required this.buttonWidth,
+    required this.buttonHeight,
+    this.gridSpacing = 2,
     required this.onPressed,
     this.optionText,
     this.textStyle = const TextStyle(
@@ -16,12 +17,14 @@ class SimpleNumpad extends StatelessWidget {
     this.backgroundColor = Colors.white,
     this.buttonBorderSide = BorderSide.none,
     this.buttonBorderRadius = 0,
+    this.useBackspace = false,
     this.backspaceSize = 24,
-    this.gridSpacing = 2,
+    this.removeBlankButton = false,
   });
 
-  final double numpadWidth;
-  final double numpadHeight;
+  final double buttonWidth;
+  final double buttonHeight;
+  final double gridSpacing;
   final Function(String) onPressed;
   final String? optionText;
   final TextStyle textStyle;
@@ -29,15 +32,14 @@ class SimpleNumpad extends StatelessWidget {
   final Color backgroundColor;
   final BorderSide buttonBorderSide;
   final double buttonBorderRadius;
+  final bool useBackspace;
   final double backspaceSize;
-  final double gridSpacing;
+  final bool removeBlankButton;
 
   @override
   Widget build(BuildContext context) {
-    final double buttonWidth = (numpadWidth - 4) / 3;
-    final double buttonHeight = (numpadHeight - 6) / 4;
     return SizedBox(
-      width: numpadWidth,
+      width: buttonWidth * 3 + gridSpacing * 2,
       child: GridView.count(
         padding: EdgeInsets.zero,
         physics: const NeverScrollableScrollPhysics(),
@@ -56,9 +58,9 @@ class SimpleNumpad extends StatelessWidget {
           _padTextButton("7"),
           _padTextButton("8"),
           _padTextButton("9"),
-          optionText == null ? _padDummyButton() : _padTextButton(optionText!),
+          optionText != null ? _padTextButton(optionText!) : _padDummyButton(),
           _padTextButton("0"),
-          _padImageButton(),
+          useBackspace ? _padImageButton() : _padDummyButton(),
         ],
       ),
     );
@@ -95,6 +97,10 @@ class SimpleNumpad extends StatelessWidget {
 
   /// 가짜 버튼
   Widget _padDummyButton() {
+    if (removeBlankButton) {
+      return const SizedBox.shrink();
+    }
+
     return Container(
       decoration: BoxDecoration(
         color: backgroundColor,
