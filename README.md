@@ -1,39 +1,181 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+A simple numeric keypad that allows for easy design modifications.
 
-## Getting started
+## How to use
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+### Installation
 
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+```yaml
+dependencies:
+  simple_numpad: ^1.0.0
 ```
 
-## Additional information
+### Import
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+```dart
+import 'package:simple_numpad/simple_numpad.dart';
+```
+
+## Example
+
+### Basic
+
+<img src="https://i.esdrop.com/d/f/UV8fTFnM83/W0LZuxliC0.gif"  width="400"/>
+
+```dart
+SimpleNumpad(
+    buttonWidth: 80,
+    buttonHeight: 60,
+    onPressed: (str) {
+        print(str);
+    },
+);
+```
+
+<br/>
+
+### Circular
+
+<img src="https://i.esdrop.com/d/f/UV8fTFnM83/thpN9jfxFU.gif"  width="400"/>
+
+```dart
+SimpleNumpad(
+    buttonWidth: 60,
+    buttonHeight: 60,
+    gridSpacing: 10,
+    buttonBorderRadius: 30,
+    onPressed: (str) {
+        print(str);
+    },
+);
+```
+
+<br/>
+
+### Bordered
+
+<img src="https://i.esdrop.com/d/f/UV8fTFnM83/GcIwa9VEgk.gif"  width="400"/>
+
+```dart
+SimpleNumpad(
+    buttonWidth: 60,
+    buttonHeight: 60,
+    gridSpacing: 10,
+    buttonBorderRadius: 30,
+    buttonBorderSide: const BorderSide(
+        color: Colors.black,
+        width: 1,
+    ),
+    onPressed: (str) {
+        print(str);
+    },
+);
+```
+
+<br/>
+
+### Backspace & Option
+
+<img src="https://i.esdrop.com/d/f/UV8fTFnM83/MxV6JQQWTB.gif"  width="400"/>
+
+```dart
+SimpleNumpad(
+    buttonWidth: 60,
+    buttonHeight: 60,
+    gridSpacing: 10,
+    buttonBorderRadius: 30,
+    buttonBorderSide: const BorderSide(
+        color: Colors.black,
+        width: 1,
+    ),
+    useBackspace: true,
+    optionText: 'clear',
+    onPressed: (str) {
+        print(str);
+    },
+);
+```
+
+<br/>
+
+### Custom1
+
+<img src="https://i.esdrop.com/d/f/UV8fTFnM83/6Z4JkK1uL8.gif"  width="400"/>
+
+```dart
+SimpleNumpad(
+    buttonWidth: 80,
+    buttonHeight: 60,
+    gridSpacing: 5,
+    buttonBorderRadius: 8,
+    foregroundColor: Colors.white,
+    backgroundColor: Colors.black.withAlpha(200),
+    textStyle: const TextStyle(
+        color: Colors.white,
+        fontSize: 22,
+        fontWeight: FontWeight.w400,
+    ),
+    useBackspace: true,
+    optionText: 'clear',
+    onPressed: (str) {
+        print(str);
+    };
+```
+
+<br/>
+
+### Custom2
+
+<img src="https://i.esdrop.com/d/f/UV8fTFnM83/gEdgXw5H32.gif"  width="400"/>
+
+```dart
+SimpleNumpad(
+    buttonWidth: 60,
+    buttonHeight: 60,
+    gridSpacing: 5,
+    buttonBorderRadius: 30,
+    foregroundColor: Colors.white,
+    backgroundColor: Colors.black.withAlpha(200),
+    textStyle: const TextStyle(
+        color: Colors.white,
+        fontSize: 22,
+        fontWeight: FontWeight.w400,
+    ),
+    useBackspace: false,
+    removeBlankButton: true,
+    onPressed: (str) {
+        print(str);
+    },
+);
+```
+
+## onPressed function example
+
+The onPressed function takes input for the string displayed on the Numpad.<br/>
+
+Default:<br/>
+'1', '2', '3', '4', '5', '6', '7', '8', '9', '0'
+
+Optional:<br/>
+'BACKSPACE', '${optionText}'
+
+```dart
+void onPressed(String str) {
+    switch(str) {
+        case 'BACKSPACE':
+            // This case is accessible when you have set "useBackspace: true".
+            removeLast();
+            break;
+        case 'clear':
+            // This string is what you have injected into "optionText".
+            removeAll();
+            break;
+        default:
+            // '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'
+            int value = int.parse(str);
+            append(value);
+            break;
+    }
+}
+```
