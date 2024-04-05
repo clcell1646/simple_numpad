@@ -21,7 +21,7 @@ import 'package:simple_numpad/simple_numpad.dart';
 
 ### Basic
 
-<img src="https://i.esdrop.com/d/f/UV8fTFnM83/W0LZuxliC0.gif"  width="400"/>
+<img src="https://i.esdrop.com/d/f/UV8fTFnM83/W0LZuxliC0.gif" width="100%"/>
 
 ```dart
 SimpleNumpad(
@@ -37,7 +37,7 @@ SimpleNumpad(
 
 ### Circular
 
-<img src="https://i.esdrop.com/d/f/UV8fTFnM83/thpN9jfxFU.gif"  width="400"/>
+<img src="https://i.esdrop.com/d/f/UV8fTFnM83/thpN9jfxFU.gif"  width="100%"/>
 
 ```dart
 SimpleNumpad(
@@ -55,7 +55,7 @@ SimpleNumpad(
 
 ### Bordered
 
-<img src="https://i.esdrop.com/d/f/UV8fTFnM83/GcIwa9VEgk.gif"  width="400"/>
+<img src="https://i.esdrop.com/d/f/UV8fTFnM83/GcIwa9VEgk.gif"  width="100%"/>
 
 ```dart
 SimpleNumpad(
@@ -77,7 +77,7 @@ SimpleNumpad(
 
 ### Backspace & Option
 
-<img src="https://i.esdrop.com/d/f/UV8fTFnM83/MxV6JQQWTB.gif"  width="400"/>
+<img src="https://i.esdrop.com/d/f/UV8fTFnM83/MxV6JQQWTB.gif"  width="100%"/>
 
 ```dart
 SimpleNumpad(
@@ -101,7 +101,7 @@ SimpleNumpad(
 
 ### Custom1
 
-<img src="https://i.esdrop.com/d/f/UV8fTFnM83/6Z4JkK1uL8.gif"  width="400"/>
+<img src="https://i.esdrop.com/d/f/UV8fTFnM83/6Z4JkK1uL8.gif"  width="100%"/>
 
 ```dart
 SimpleNumpad(
@@ -127,7 +127,7 @@ SimpleNumpad(
 
 ### Custom2
 
-<img src="https://i.esdrop.com/d/f/UV8fTFnM83/gEdgXw5H32.gif"  width="400"/>
+<img src="https://i.esdrop.com/d/f/UV8fTFnM83/gEdgXw5H32.gif"  width="100%"/>
 
 ```dart
 SimpleNumpad(

@@ -2,6 +2,14 @@ name: simple_numpad
 description: "A simple numpad."
 version: 1.0.0
 
+platforms:
+  android:
+  ios:
+  linux:
+  macos:
+  web:
+  windows:
+
 environment:
   sdk: ">=3.3.3 <4.0.0"
   flutter: ">=1.17.0"
