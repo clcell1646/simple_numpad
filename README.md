@@ -8,7 +8,7 @@ A simple numeric keypad that allows for easy design modifications.
 
 ```yaml
 dependencies:
-  simple_numpad: ^1.0.0
+  simple_numpad: ^1.0.2
 ```
 
 ### Import

@@ -5,4 +5,8 @@
 ## 1.0.1
 
 - Add support platform information.
-- Revision README.md file.
+- Revise README.md file.
+
+## 1.0.2
+
+- Revise README.md file.
