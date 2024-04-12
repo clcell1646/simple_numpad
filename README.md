@@ -150,6 +150,31 @@ SimpleNumpad(
 );
 ```
 
+### Custom3
+
+<img src="https://i.esdrop.com/d/f/UV8fTFnM83/zrrWMxU0MZ.gif"  width="100%"/>
+
+```dart
+SimpleNumpad(
+    buttonWidth: 80,
+    buttonHeight: 60,
+    gridSpacing: 0,
+    buttonBorderRadius: 8,
+    foregroundColor: Colors.black,
+    backgroundColor: Colors.transparent,
+    textStyle: const TextStyle(
+        color: Colors.black,
+        fontSize: 22,
+        fontWeight: FontWeight.w400,
+    ),
+    useBackspace: false,
+    removeBlankButton: true,
+    onPressed: (str) {
+        print(str);
+    },
+);
+```
+
 ## onPressed function example
 
 The onPressed function takes input for the string displayed on the Numpad.<br/>
