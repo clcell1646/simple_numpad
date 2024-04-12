@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// A simple numpad.
 class SimpleNumpad extends StatelessWidget {
   const SimpleNumpad({
     super.key,
@@ -22,18 +23,45 @@ class SimpleNumpad extends StatelessWidget {
     this.removeBlankButton = false,
   });
 
+  /// Button width.
   final double buttonWidth;
+
+  /// Button height.
   final double buttonHeight;
+
+  /// Spacing of buttons.
   final double gridSpacing;
+
+  /// Button event handle function.
   final Function(String) onPressed;
+
+  /// Bottom left button text.
   final String? optionText;
+
+  /// Text style.
   final TextStyle textStyle;
+
+  /// Button foreground color.
   final Color foregroundColor;
+
+  /// Button background color.
   final Color backgroundColor;
+
+  /// Button border side.
   final BorderSide buttonBorderSide;
+
+  /// Button border radius.
   final double buttonBorderRadius;
+
+  /// Use bottom right backspace option.
   final bool useBackspace;
+
+  /// Bottom right backspace
   final double backspaceSize;
+
+  /// Remove blank button option.
+  /// If you turn on this option,
+  /// Deactivated bottom left and right buttons buttons will be removed.
   final bool removeBlankButton;
 
   @override
