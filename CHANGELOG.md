@@ -19,3 +19,7 @@
 
 - Revise package description.
 - Add documentation comments.
+
+## 1.0.5
+
+- Added example.

@@ -1,6 +1,6 @@
 name: simple_numpad
 description: "A simple numpad. You can easily change it to your desired design."
-version: 1.0.4
+version: 1.0.5
 
 platforms:
   android:
